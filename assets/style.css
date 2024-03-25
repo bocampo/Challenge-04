@@ -1,0 +1,46 @@
+.darkMode {
+    background-color: black;
+    color: white;
+}
+
+header {
+    height: 70px;
+    background-color: blue;
+}
+
+#themeMode {
+    float: right;
+    margin: 15px;
+}
+
+form {
+    position: relative;
+    text-align: center;
+}
+
+.formHeader {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+}
+
+label input {
+    margin: 10px 0px 10px 0px;
+}
+
+input {
+    width: 35%;
+}
+
+#content {
+    height: 250px;
+}
+
+footer {
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    bottom: 0px;
+    background-color: crimson;
+}
