@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Linked scripted to html file-->
-    <script src="./assets/script.js"></script>
     <!--Linked stylesheets to html file-->
     <link rel="stylesheet" href="./assets/reset.css" />
     <link rel="stylesheet" href="./assets/style.css" />
@@ -14,9 +12,11 @@
 
 <body>
     <header>
+        <!--Button to change theme mode-->
         <button id="themeMode">🔅</button>
     </header>
 
+    <!--Created form for blog post-->
     <form>
         <h1 class="formHeader">What's on your mind?</h1>
         <label for="uName">Username</label><br>
@@ -26,8 +26,10 @@
         <label for="content">Content</label><br>
         <input type="text" id="content"><br>
         <button id="submitBlog">Submit</button>
-        <!--onclick="window.location.href = './blogPage.html';"-->
     </form>
+
+    <!--Linked scripted to html file-->
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
