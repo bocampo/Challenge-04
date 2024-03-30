@@ -5,7 +5,7 @@
 
 header {
     height: 70px;
-    background-color: blue;
+    border: 2px solid black;
 }
 
 #themeMode {
@@ -37,10 +37,14 @@ input {
     height: 250px;
 }
 
+article {
+    border: 2px solid black;
+}
+
 footer {
     position: absolute;
     height: 15%;
     width: 100%;
     bottom: 0px;
-    background-color: crimson;
+    border: 2px solid black;
 }

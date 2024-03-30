@@ -44,10 +44,16 @@ theme.addEventListener('click', function (event) {
 
     if (isDark) {
         document.querySelector('html').setAttribute('style', 'color: white; background-color:black');
+        document.querySelector('header').setAttribute('style', 'border: 2px solid white');
+        document.querySelector('article').setAttribute('style', 'border: 2px solid white');
+        document.querySelector('footer').setAttribute('style', 'border: 2px solid white');
         isDark = false;
     }
     else {
         document.querySelector('html').setAttribute('style', 'color: black; background-color:white');
+        document.querySelector('header').setAttribute('style', 'border: 2px solid black');
+        document.querySelector('article').setAttribute('style', 'border: 2px solid black');
+        document.querySelector('footer').setAttribute('style', 'border: 2px solid black');
         isDark = true;
     }
 }
