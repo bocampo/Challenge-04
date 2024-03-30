@@ -3,19 +3,16 @@ const theme = document.querySelector('#themeMode');
 const blogThread = document.querySelector('#blogThread');
 let isDark = true;
 let userName, title, comment = "";
-const childUser = document.createElement('p');
-const childTitle = document.createElement('p');
-const childComment = document.createElement('p');
-/*
-const h1El = document.createElement('h1');
-h1El.textContent = 'Welcome to my page';
-body.appendChild(h1El);
-*/
+
 function renderBlogs() {
     //Creates variable in order to pull blog information from local storage
     blogPost = JSON.parse(localStorage.getItem('blogEntry'));
 
     for (let i = 0; i < blogPost.length; i++) {
+        let childUser = document.createElement('p');
+        let childTitle = document.createElement('p');
+        let childComment = document.createElement('p');
+
         userName = blogPost[i].username;
         title = blogPost[i].title;
         comment = blogPost[i].blogPost;
@@ -29,6 +26,7 @@ function renderBlogs() {
         blogThread.appendChild(childUser);
         blogThread.appendChild(childTitle);
         blogThread.appendChild(childComment);
+        blogThread.appendChild(document.createElement('br'));
     }
 
 }
