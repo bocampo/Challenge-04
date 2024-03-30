@@ -1,23 +1,36 @@
-let blogThread = [];
+let blogPost = [];
 const theme = document.querySelector('#themeMode');
+const blogThread = document.querySelector('#blogThread');
 let isDark = true;
-
+let userName, title, comment = "";
+const childUser = document.createElement('p');
+const childTitle = document.createElement('p');
+const childComment = document.createElement('p');
+/*
+const h1El = document.createElement('h1');
+h1El.textContent = 'Welcome to my page';
+body.appendChild(h1El);
+*/
 function renderBlogs() {
     //Creates variable in order to pull blog information from local storage
-    blogThread = JSON.parse(localStorage.getItem('blogEntry'));
-    console.log(blogThread[0].username);
+    blogPost = JSON.parse(localStorage.getItem('blogEntry'));
 
-    for (let i = 0; i < blogThread.length; i++) {
-        document.createElement('p').textContent = "Username: ";
-        document.createElement('span').textContent = document.getElementById('uName').innerHTML = blogThread[i].username;
+    for (let i = 0; i < blogPost.length; i++) {
+        userName = blogPost[i].username;
+        title = blogPost[i].title;
+        comment = blogPost[i].blogPost;
 
-        document.createElement('p').textContent = "Title: ";
-        document.createElement('span').textContent = document.getElementById('bTitle').innerHTML = blogThread[i].title;
+        console.log(userName);
 
-        document.createElement('p').textContent = "Comment: ";
-        document.createElement('span').textContent = document.getElementById('content').innerHTML = blogThread[i].blogPost;
+        childUser.textContent = `Username: ${userName}`;
+        childTitle.textContent = `Title: ${title}`;
+        childComment.textContent = `Comment: ${comment}`;
 
+        blogThread.appendChild(childUser);
+        blogThread.appendChild(childTitle);
+        blogThread.appendChild(childComment);
     }
+
 }
 
 
@@ -28,6 +41,7 @@ function init() {
 
 init();
 
+//Code controls whether page is in light or dark mode
 theme.addEventListener('click', function (event) {
 
     if (isDark) {

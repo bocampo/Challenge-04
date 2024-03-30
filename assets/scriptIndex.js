@@ -2,11 +2,10 @@ const entrySubmission = document.querySelector('#submitBlog');
 const username = document.querySelector('#uName');
 const blogTitle = document.querySelector('#bTitle');
 const content = document.querySelector('#content');
-const blogThread = document.querySelector('#blogThread');
 const theme = document.querySelector('#themeMode');
 let isDark = true;
 
-let blogEntry = [];
+let blogEntry = JSON.parse(localStorage.getItem('blogEntry'));
 
 entrySubmission.addEventListener('click', function (event) {
     event.preventDefault();
@@ -17,12 +16,16 @@ entrySubmission.addEventListener('click', function (event) {
     }
     //Submits form to local storage
     else {
-        blogEntry.push({
-            username: username.value.trim(),
-            title: blogTitle.value.trim(),
-            blogPost: content.value
-        });
-
+        if (blogEntry == null) {
+            blogEntry = [];
+        }
+        else {
+            blogEntry.push({
+                username: username.value.trim(),
+                title: blogTitle.value.trim(),
+                blogPost: content.value
+            });
+        }
         localStorage.setItem('blogEntry', JSON.stringify(blogEntry));
         window.open("./blogPage.html", "_self");
     }
